@@ -26,6 +26,11 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "build/index.html"));
 });
 
+app.post("/*", (req, res) => {
+  console.log("no such route " + req.params[0]);
+  res.status(404).send("no such route");
+});
+
 /* startup */
 app.listen(port, undefined, () =>
   console.log(`server is running on port: ${port}`)
