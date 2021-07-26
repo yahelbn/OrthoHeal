@@ -82,7 +82,7 @@ export const DataHebrew = {
     label1: "לאתר המלא שלנו",
     link1: "לחץ כאן",
     label2: "צרו איתנו קשר בטלפון: 054-4914940 , 052-3982954",
-    label3: "Info.orthoheal@shen-zen.co.i או באימייל",
+    label3: "Info.orthoheal@shen-zen.co.il או באימייל",
     label4: "עקבו אחרינו ב",
   },
 };

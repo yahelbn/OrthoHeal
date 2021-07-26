@@ -102,7 +102,7 @@ export const WebsiteRights = styled.small`
 
 export const SocialIcons = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 240px;
 `;
@@ -122,4 +122,8 @@ export const LabelFooter = styled.label`
   color: white;
   margin-left: 10px;
   margin-right: 10px;
+
+  @media screen and (max-width: 450px) {
+    font-size: 14px;
+  }
 `;

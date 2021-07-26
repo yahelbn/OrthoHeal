@@ -43,32 +43,6 @@ const Footer = ({ content, locale }) => {
   };
   useEffect(() => {});
 
-  // const renderFooterLinks = content.map((footerCol, index) => {
-  //   return (
-  //     <React.Fragment key={index}>
-  //       <FooterLinkItems>
-  //         {footerCol.map((footerLink, index) => {
-  //           if (index === 0) {
-  //             return (
-  //               <React.Fragment key={index}>
-  //                 <FooterLinkTitle to="/signin">
-  //                   {footerLink.name}
-  //                 </FooterLinkTitle>
-  //               </React.Fragment>
-  //             );
-  //           }
-  //           return (
-  //             <React.Fragment key={index}>
-  //               <FooterLink to={`/${locale}/${footerLink.link}`}>
-  //                 {footerLink.name}
-  //               </FooterLink>
-  //             </React.Fragment>
-  //           );
-  //         })}
-  //       </FooterLinkItems>
-  //     </React.Fragment>
-  //   );
-  // });
   return (
     <FooterContainer>
       <Modal
@@ -77,9 +51,6 @@ const Footer = ({ content, locale }) => {
         modalcomp={<Modal modalContent={contentOfModal} />}
       />
       <FooterWrap>
-        {/* <FooterLinksContainer>
-          <FooterLinkWrapper>{renderFooterLinks}</FooterLinkWrapper>
-        </FooterLinksContainer> */}
         <Row
           style={{
             flexDirection: "row-reverse",
@@ -106,16 +77,6 @@ const Footer = ({ content, locale }) => {
         </Row>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to="/" onClick={toggleHome}>
-              <img
-                src={OrthoHealLogo}
-                alt="OrthoHeal Logo-02.png"
-                style={{ width: "120px", height: "100px", marginTop: "20px" }}
-              />{" "}
-            </SocialLogo>
-            <WebsiteRights>
-              © {new Date().getFullYear()} All rights reserved.
-            </WebsiteRights>
             <SocialIcons>
               <Row>
                 <SocialIconLink
@@ -127,24 +88,18 @@ const Footer = ({ content, locale }) => {
                 </SocialIconLink>
                 <LabelFooter> {content.label4}</LabelFooter>
               </Row>
-              {/* <SocialIconLink href="/" target="_blank" aria-label="Instagram">
-                <FaInstagram />
-              </SocialIconLink>
-              <SocialIconLink
-                href="https://github.com/yahelbn"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <FaGithub />
-              </SocialIconLink>
-              <SocialIconLink
-                href="https://www.linkedin.com/in/yahel-bar-noam/"
-                target="_blank"
-                aria-label="Linkedin"
-              >
-                <FaLinkedin />
-              </SocialIconLink> */}
             </SocialIcons>
+
+            <SocialLogo to="/" onClick={toggleHome}>
+              <img
+                src={OrthoHealLogo}
+                alt="OrthoHeal Logo-02.png"
+                style={{ width: "120px", height: "100px", marginTop: "20px" }}
+              />{" "}
+            </SocialLogo>
+            <WebsiteRights>
+              © {new Date().getFullYear()} All rights reserved.
+            </WebsiteRights>
           </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>

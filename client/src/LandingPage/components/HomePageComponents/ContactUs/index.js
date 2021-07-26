@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, ButtonRouter } from "../../ButtonElement";
 import {
   InfoContainer,
@@ -23,8 +23,17 @@ import {
   Form,
   Container,
   TextHeader,
+  AlertText,
 } from "./ContactUsElements";
 import ReactHtmlParser from "react-html-parser";
+import Loader from "react-loader-spinner";
+
+import "../../DiffrentModals/Modal/Modal.css";
+import Modal from "../../DiffrentModals/Modal/Modal";
+import useModal from "../../DiffrentModals/Modal/useModal";
+import ModalContactUs from "../../DiffrentModals/ModalContactUs/index";
+
+import axios from "axios";
 
 const ContactUs = ({ content, locale }) => {
   const {
@@ -48,6 +57,15 @@ const ContactUs = ({ content, locale }) => {
   } = content;
 
   const linkButton = createButton();
+  const { isShowing, toggle } = useModal();
+  const [contentOfModal, setContentOfModal] = useState("");
+
+  const [fullName, setFullName] = useState();
+  const [telephone, setTelephone] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState("");
+  const [error, setIsError] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   function createButton() {
     if (routerlink) {
@@ -86,12 +104,41 @@ const ContactUs = ({ content, locale }) => {
     }
   }
 
+  const sendMail = async () => {
+    try {
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/mails/send`, {
+        sender: { telephone: telephone, email: email, fullName: fullName },
+      });
+      setIsError(false);
+      setLoader(false);
+      setMessage("Your details have been sent");
+      //  setTimeout(() => {}, 2000);
+      toggle();
+      console.log("hereeeee");
+    } catch (e) {
+      setIsError(true);
+      setMessage("Your details have not been sent");
+      setLoader(false);
+    }
+  };
+
   const ConvertDescription = ReactHtmlParser(description);
 
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
+          {/* <Modal
+            isShowing={isShowing}
+            hide={toggle}
+            modalcomp={
+              <ModalContactUs
+                modalContent={contentOfModal}
+                // company={choseCompany}
+                //locale={props.locale}
+              />
+            }
+          /> */}
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper rtl={Boolean(rtl) ? true : false}>
@@ -101,12 +148,49 @@ const ContactUs = ({ content, locale }) => {
                     <TextHeader>{content.text}</TextHeader>
 
                     <FormLabel htmlFor="for">{content.formlabel1}</FormLabel>
-                    <FormInput type={content.forminput1} required />
+                    <FormInput
+                      type={content.forminput1}
+                      required
+                      onChange={(event) => {
+                        setFullName(event.target.value);
+                      }}
+                    />
                     <FormLabel htmlFor="for">{content.formlabel2}</FormLabel>
-                    <FormInput type={content.forminput2} required />
+                    <FormInput
+                      type={content.forminput2}
+                      required
+                      onChange={(event) => {
+                        setEmail(event.target.value);
+                      }}
+                    />
                     <FormLabel htmlFor="for">{content.formlabel3}</FormLabel>
-                    <FormInput type={content.forminput3} required />
-                    <FormButton type="submit">{content.formbutton}</FormButton>
+                    <FormInput
+                      type={content.forminput3}
+                      required
+                      onChange={(event) => {
+                        setTelephone(event.target.value);
+                      }}
+                    />
+                    <FormButton
+                      onClick={() => {
+                        sendMail();
+                      }}
+                      type="submit"
+                    >
+                      {loader ? (
+                        <Loader
+                          type="Puff"
+                          color="#DCD9C6"
+                          height={35}
+                          width={35}
+                          timeout={10000}
+                        />
+                      ) : (
+                        content.formbutton
+                      )}
+                    </FormButton>
+
+                    {message && <AlertText error={error}>{message}</AlertText>}
                   </Form>
                 </FormContent>
               </TextWrapper>

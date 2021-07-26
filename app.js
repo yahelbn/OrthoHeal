@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const { environments } = require("./src/config/constants.json");
 const port = process.env.PORT || 5000;
+const handleMails = require("./src/routes/handleMails");
 
 /* middlewares */
 /* Serve static files from the React app */
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === environments.DEVELOPMENT) {
 }
 
 /* routes */
+app.use("/api/mails", handleMails);
 
 /* gets you to react generated index file - root of your application */
 app.get("/*", (req, res) => {

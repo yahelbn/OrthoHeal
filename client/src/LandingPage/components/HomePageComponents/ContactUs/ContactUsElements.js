@@ -11,13 +11,23 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  height: 120vh;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+
+  @media screen and (max-width: 480px) {
+    height: 170vh;
+    //   height: 1550px;
+  }
+
+  @media screen and (max-width: 360px) {
+    height: 190vh;
+    //   height: 1550px;
+  }
 `;
 
 export const InfoRow = styled.div`
@@ -187,4 +197,17 @@ export const Form = styled.form`
   @media screen and(max-width:400px) {
     padding: 32px 32px;
   }
+`;
+
+export const AlertText = styled.span`
+  direction: ltr;
+  text-align: center;
+  margin-top: 24px;
+  color: ${({ error }) => (error ? "brown" : "#1d5630")};
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: ${({ error }) => (error ? "#f8d7da" : "#d3ebdb")};
+  border: 0.5px solid ${({ error }) => (error ? "#f08080" : "#008080")};
+  border-radius: 8px;
 `;
