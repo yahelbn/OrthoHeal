@@ -55,14 +55,22 @@ export const HeroBg = styled.div`
 `;
 
 export const VideoBg = styled.video`
-  width: 80%;
-  height: 80%;
-
+  /* width: 80%;
+  height: 80%; */
+  width: 20vw;
+  height: 70vh;
   background: white;
+  @media screen and (max-width: 850px) {
+    width: 30vw;
+  }
+  @media screen and (max-width: 480px) {
+    width: 50vw;
+  }
 `;
 
 export const HeroContent = styled.div`
   z-index: 3;
+
   max-width: 1200px;
   position: absolute;
   padding: 8px 24px;
@@ -171,4 +179,18 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+export const ColumnOfContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60vw;
+  @media screen and (max-width: 850px) {
+    width: 50vw;
+  }
+  @media screen and (max-width: 480px) {
+    width: 90vw;
+  }
 `;

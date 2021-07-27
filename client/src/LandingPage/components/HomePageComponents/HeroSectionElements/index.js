@@ -16,6 +16,7 @@ import {
   HeroP,
   HeroGrid,
   Column,
+  ColumnOfContent,
 } from "./HeroSectionElements";
 import ReactHtmlParser from "react-html-parser";
 
@@ -36,12 +37,11 @@ const HeroSection = ({ content }) => {
 
   return (
     <HeroContainer id="home">
-      <HeroBg>
-        {/* <VideoBg autoPlay loop muted src={Video} type="video/mp4" /> */}
+      {/* <HeroBg>
         <ImgWrap>
           <Img src={ortohealwater}></Img>
         </ImgWrap>
-      </HeroBg>
+      </HeroBg> */}
       <HeroContent>
         <HeroH1>{heroh1}</HeroH1>
 
@@ -58,7 +58,7 @@ const HeroSection = ({ content }) => {
               type="video/mp4"
             />
           </Column>
-          <Column>
+          <ColumnOfContent>
             <HeroPHeader rtl={rtl}>{herop}</HeroPHeader>
             <HeroP rtl={rtl}>{herop1}</HeroP>
             <HeroP rtl={rtl} style={{ fontWeight: "200" }}>
@@ -73,7 +73,7 @@ const HeroSection = ({ content }) => {
             <HeroP rtl={rtl} style={{ fontWeight: "200" }}>
               {herop5convert}
             </HeroP>
-          </Column>
+          </ColumnOfContent>
         </HeroGrid>
 
         <HeroBtnWrapper>
