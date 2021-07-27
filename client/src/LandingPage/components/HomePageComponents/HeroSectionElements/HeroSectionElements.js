@@ -12,17 +12,17 @@ export const HeroContainer = styled.div`
   z-index: 1;
 
   @media screen and (max-width: 480px) {
-    height: 175vh;
+    height: 180vh;
     //   height: 1550px;
   }
 
   @media screen and (max-width: 380px) and (max-height: 670px) {
-    height: 195vh;
+    height: 210vh;
     //   height: 1550px;
   }
 
   @media screen and (max-width: 320px) {
-    height: 220vh;
+    height: 235vh;
     //   height: 1550px;
   }
   /* :before {
@@ -178,7 +178,7 @@ export const HeroGrid = styled.div`
   align-items: center;
   flex-direction: row;
   @media screen and (max-width: 480px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -202,6 +202,7 @@ export const ColumnOfContent = styled.div`
     width: 50vw;
   }
   @media screen and (max-width: 480px) {
-    width: 90vw;
+    width: 82vw;
+    margin-bottom: 20px;
   }
 `;
