@@ -34,10 +34,10 @@ async function main(req) {
   await mailTransporter.sendMail(mailDetails, function (err, data) {
     if (err) {
       console.log("Error Occurs");
-      res.status(404).send("Error Occurs");
+      // res.status(404).send("Error Occurs");
     } else {
       console.log("Email sent successfully");
-      res.status(200).send("Email sent successfully");
+      // res.status(200).send("Email sent successfully");
     }
   });
 }
