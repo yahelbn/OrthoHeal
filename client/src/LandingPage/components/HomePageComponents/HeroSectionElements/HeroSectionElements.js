@@ -12,12 +12,12 @@ export const HeroContainer = styled.div`
   z-index: 1;
 
   @media screen and (max-width: 480px) {
-    height: 165vh;
+    height: 175vh;
     //   height: 1550px;
   }
 
   @media screen and (max-width: 380px) and (max-height: 670px) {
-    height: 185vh;
+    height: 195vh;
     //   height: 1550px;
   }
 
