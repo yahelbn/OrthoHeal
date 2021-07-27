@@ -166,11 +166,18 @@ export const Img = styled.img`
 `;
 
 export const HeroGrid = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1.3fr;
 
   @media screen and (max-width: 480px) {
     grid-template-columns: 1fr;
+  } */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
   }
 `;
 

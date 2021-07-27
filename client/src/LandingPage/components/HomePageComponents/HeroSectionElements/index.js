@@ -37,16 +37,16 @@ const HeroSection = ({ content }) => {
 
   return (
     <HeroContainer id="home">
-      {/* <HeroBg>
+      <HeroBg>
         <ImgWrap>
           <Img src={ortohealwater}></Img>
         </ImgWrap>
-      </HeroBg> */}
+      </HeroBg>
       <HeroContent>
         <HeroH1>{heroh1}</HeroH1>
 
         <HeroGrid>
-          <Column style={{ width: "100%", height: "100%" }}>
+          <Column>
             {" "}
             <VideoBg
               controls
