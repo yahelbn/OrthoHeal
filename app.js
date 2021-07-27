@@ -13,8 +13,11 @@ const handleMails = require("./src/routes/handleMails");
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.json());
 /* security package */
-app.use(helmet());
-
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 if (process.env.NODE_ENV === environments.DEVELOPMENT) {
   app.use(cors());
   app.use(morgan("tiny"));
