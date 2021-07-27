@@ -64,7 +64,7 @@ export const VideoBg = styled.video`
     width: 30vw;
   }
   @media screen and (max-width: 480px) {
-    width: 50vw;
+    width: 65vw;
   }
 `;
 
@@ -83,7 +83,8 @@ export const HeroH1 = styled.h1`
   color: black;
   font-size: 48px;
   text-align: center;
-  margin-top: 120px;
+  margin-top: 70px;
+  margin-bottom: 20px;
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
@@ -122,7 +123,7 @@ export const HeroP = styled.p`
   direction: ${({ rtl }) => (rtl ? "rtl" : "ltr")};
 
   @media screen and (max-width: 768px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   @media screen and (max-width: 480px) {
@@ -186,6 +187,9 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media screen and (max-width: 768px) and (min-width: 480px) {
+    margin-left: 40px;
+  }
 `;
 
 export const ColumnOfContent = styled.div`
