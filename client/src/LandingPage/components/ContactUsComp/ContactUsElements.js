@@ -8,7 +8,7 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   top: 0;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   background: linear-gradient(
     0deg,
@@ -23,6 +23,8 @@ export const Container = styled.div`
 `;
 
 export const FormWrap = styled.div`
+  z-index: -1;
+
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -34,11 +36,12 @@ export const FormWrap = styled.div`
 `;
 
 export const Form = styled.form`
+  z-index: -1;
+
   background: #1b1924;
   max-width: 400px;
   height: auto;
   width: 100%;
-  z-index: 1;
   display: grid;
   margin: 0 auto;
   padding: 80px 32px;

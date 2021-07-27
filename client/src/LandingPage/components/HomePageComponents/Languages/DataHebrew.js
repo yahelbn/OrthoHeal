@@ -62,6 +62,9 @@ export const DataHebrew = {
     herop5:
       "<strong> חשוב לדעת! FlexiOH® עומד בסטנדרטים רפואיים מחמירים ובעל תקנים בינלאומיים - FDA, CE</strong>  לפרטים נוספים ומרפאות מורשות השאירו פרטים בטופס המצורף",
     button: "ליצירת קשר",
+    support: "תמיכה",
+    chatmessage: ` 🤝 שלום, \n כיצד אוכל לעזור לך?`,
+    //כיצד אוכל לעזור לך? ,\n 🤝שלום
   },
   contactus: {
     rtl: true,

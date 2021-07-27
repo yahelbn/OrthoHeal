@@ -8,6 +8,9 @@ import Footer from "../components/HomePageComponents/Footer";
 import LanguageSelectionScreen from "../components/HomePageComponents/LanguageSelectionScreen";
 import ContactUs from "../components/HomePageComponents/ContactUs/index";
 
+import FloatingWhatsApp from "react-floating-whatsapp";
+import "react-floating-whatsapp/dist/index.css";
+
 const Home = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [languageOpen, setlanguageOpen] = useState(false);
@@ -34,15 +37,18 @@ const Home = (props) => {
         locale={props.locale}
         content={props.dataLanguages.navBar}
       />
+
       <LanguageSelectionScreen
         languageOpen={languageOpen}
         toggleLanguage={toggleLanguage}
         props={props}
       />
+
       <HeroSection
         content={props.dataLanguages.heroSection}
         locale={props.locale}
       />
+
       <ContactUs
         content={props.dataLanguages.homeObjOne}
         locale={props.locale}

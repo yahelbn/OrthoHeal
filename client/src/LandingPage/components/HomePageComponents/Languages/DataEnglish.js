@@ -62,6 +62,8 @@ export const DataEnglish = {
     herop5:
       "<strong> Important to know! FlexiOH® meets strict medical standards and meets international standards - FDA, CE </strong> For more details and licensed clinics leave details in the attached form",
     button: "Contact",
+    support: "Support",
+    chatmessage: `Hello 🤝 ,\n how can i help you?`,
   },
   contactus: {
     rtl: false,

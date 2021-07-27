@@ -187,7 +187,7 @@ export const Form = styled.form`
   max-width: 400px;
   height: auto;
   width: 100%;
-  z-index: 1;
+  /* z-index: 1; */
   display: grid;
   margin: 0 auto;
   padding: 80px 32px;

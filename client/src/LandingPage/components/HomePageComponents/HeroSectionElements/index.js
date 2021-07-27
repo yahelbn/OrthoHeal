@@ -21,10 +21,13 @@ import {
 import ReactHtmlParser from "react-html-parser";
 
 import ortohealwater from "./../../../images/ortohealwater.webp";
+import FloatingWhatsApp from "react-floating-whatsapp";
+import "react-floating-whatsapp/dist/index.css";
+import OrthoHealLogo from "../../../images/OrthoHealLogo.webp";
 
 const HeroSection = ({ content }) => {
   const [hover, setHover] = useState(false);
-  const { heroh1, herop, button, rtl, herop1 } = content;
+  const { heroh1, herop, button, rtl, herop1, support, chatmessage } = content;
   const herop2convert = ReactHtmlParser(content.herop2);
   const herop3convert = ReactHtmlParser(content.herop3);
   const herop4convert = ReactHtmlParser(content.herop4);
@@ -93,6 +96,12 @@ const HeroSection = ({ content }) => {
           </Button>
         </HeroBtnWrapper>
       </HeroContent>
+      <FloatingWhatsApp
+        accountName={`OrthoHeaL - ${support}`}
+        chatMessage={chatmessage}
+        phoneNumber={"0523982954"}
+        avatar={OrthoHealLogo}
+      />
     </HeroContainer>
   );
 };
