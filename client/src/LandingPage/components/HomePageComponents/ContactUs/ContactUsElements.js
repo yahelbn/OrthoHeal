@@ -20,12 +20,12 @@ export const InfoWrapper = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 480px) {
-    height: 170vh;
+    height: 130vh;
     //   height: 1550px;
   }
 
   @media screen and (max-width: 360px) {
-    height: 190vh;
+    height: 160vh;
     //   height: 1550px;
   }
 `;
