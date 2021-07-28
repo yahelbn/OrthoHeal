@@ -81,10 +81,12 @@ export const DataEnglish = {
     text2: "תודה על התעניינותך ,<br>  אנא השאר פרטים ואצור קשר בהקדם:",
   },
   footer: {
+    rtl: false,
+
     label1: "To our full site",
     link1: "Click here",
-    label2: "Contact us by phone: 054-4914940, 052-3982954",
-    label3: "or email Info.orthoheal@shen-zen.co.i ",
+    label2: "Contact us by phone:<br> 054-4914940,<br> 052-3982954",
+    label3: "or email <br> Info.orthoheal@shen-zen.co.i ",
     label4: "Follow us on",
   },
 };

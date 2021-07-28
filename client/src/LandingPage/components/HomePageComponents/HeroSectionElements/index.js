@@ -25,7 +25,7 @@ import FloatingWhatsApp from "react-floating-whatsapp";
 import "react-floating-whatsapp/dist/index.css";
 import OrthoHealLogo from "../../../images/OrthoHealLogo.webp";
 
-const HeroSection = ({ content }) => {
+const HeroSection = ({ content, locale }) => {
   const [hover, setHover] = useState(false);
   const { heroh1, herop, button, rtl, herop1, support, chatmessage } = content;
   const herop2convert = ReactHtmlParser(content.herop2);
@@ -39,7 +39,7 @@ const HeroSection = ({ content }) => {
   };
 
   return (
-    <HeroContainer id="home">
+    <HeroContainer id="home" localeEn={locale === "en" ? true : false}>
       <HeroBg>
         <ImgWrap>
           <Img src={ortohealwater}></Img>
@@ -99,7 +99,7 @@ const HeroSection = ({ content }) => {
       <FloatingWhatsApp
         accountName={`OrthoHeaL - ${support}`}
         chatMessage={chatmessage}
-        phoneNumber={"0523982954"}
+        phoneNumber={"+972523982954"}
         avatar={OrthoHealLogo}
       />
     </HeroContainer>

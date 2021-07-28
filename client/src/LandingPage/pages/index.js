@@ -3,7 +3,7 @@ import Sidebar from "../components/HomePageComponents/Sidebar";
 import Navbar from "../components/HomePageComponents/Navbar";
 import HeroSection from "../components/HomePageComponents/HeroSectionElements";
 import InfoSection from "../components/HomePageComponents/InfoSection";
-import Advantages from "../components/HomePageComponents/Advantages";
+
 import Footer from "../components/HomePageComponents/Footer";
 import LanguageSelectionScreen from "../components/HomePageComponents/LanguageSelectionScreen";
 import ContactUs from "../components/HomePageComponents/ContactUs/index";

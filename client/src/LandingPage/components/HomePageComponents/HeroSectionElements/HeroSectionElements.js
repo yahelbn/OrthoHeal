@@ -7,22 +7,22 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 130vh;
+  height: ${({ localeEn }) => (localeEn ? "150vh" : "130vh")};
   position: relative;
   z-index: 1;
 
   @media screen and (max-width: 480px) {
-    height: 180vh;
+    height: ${({ localeEn }) => (localeEn ? "210vh" : "180vh")};
     //   height: 1550px;
   }
 
   @media screen and (max-width: 380px) and (max-height: 670px) {
-    height: 210vh;
+    height: ${({ localeEn }) => (localeEn ? "235vh" : "210vh")};
     //   height: 1550px;
   }
 
   @media screen and (max-width: 320px) {
-    height: 235vh;
+    height: ${({ localeEn }) => (localeEn ? "250vh" : "235vh")};
     //   height: 1550px;
   }
   /* :before {
@@ -81,6 +81,8 @@ export const HeroContent = styled.div`
 
 export const HeroH1 = styled.h1`
   color: black;
+  text-shadow: 1px 1px 2px #000000;
+  letter-spacing: 0.2rem;
   font-size: 48px;
   text-align: center;
   margin-top: 70px;
@@ -97,6 +99,8 @@ export const HeroH1 = styled.h1`
 
 export const HeroPHeader = styled.p`
   color: black;
+  text-shadow: 1px 1px 2px #000000;
+  letter-spacing: 0.2rem;
   font-weight: 600;
   margin-top: 24px;
   font-size: 24px;
@@ -128,6 +132,10 @@ export const HeroP = styled.p`
 
   @media screen and (max-width: 480px) {
     font-size: 15px;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
   }
 `;
 

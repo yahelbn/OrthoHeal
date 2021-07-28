@@ -26,6 +26,7 @@ import {
   LabelFooter,
 } from "./FooterElements";
 import OrthoHealLogo from "../../../images/OrthoHealLogo.webp";
+import ReactHtmlParser from "react-html-parser";
 
 //Import Modal
 
@@ -37,6 +38,8 @@ import ModalContactUs from "../../DiffrentModals/ModalContactUs/index";
 const Footer = ({ content, locale }) => {
   const { isShowing, toggle } = useModal();
   const [contentOfModal, setContentOfModal] = useState("");
+  const label2 = ReactHtmlParser(content.label2);
+  const label3 = ReactHtmlParser(content.label3);
 
   const toggleHome = () => {
     scroll.scrollToTop();
@@ -54,13 +57,18 @@ const Footer = ({ content, locale }) => {
         <Row
           style={{
             flexDirection: "row-reverse",
+            justifyContent: "space-between",
+            width: "80%",
           }}
         >
           <Row>
             {" "}
-            <LabelFooter>
+            <LabelFooter rtl={content.rtl}>
               {content.label1}
-              <a href="https://il.orthoheal.com/?fbclid=IwAR0yLDpbO4HKQ_O_GS83aeKEroZMMCiIXXnvZWv2ifkYVZcdwqp0fPAAMUk">
+              <a
+                href="https://il.orthoheal.com/?fbclid=IwAR0yLDpbO4HKQ_O_GS83aeKEroZMMCiIXXnvZWv2ifkYVZcdwqp0fPAAMUk"
+                target="_blank"
+              >
                 {content.link1}{" "}
               </a>
             </LabelFooter>
@@ -68,11 +76,11 @@ const Footer = ({ content, locale }) => {
 
           <Row>
             {" "}
-            <LabelFooter>{content.label2}</LabelFooter>
+            <LabelFooter rtl={content.rtl}>{label2}</LabelFooter>
           </Row>
           <Row>
             {" "}
-            <LabelFooter>{content.label3}</LabelFooter>
+            <LabelFooter rtl={content.rtl}>{label3}</LabelFooter>
           </Row>
         </Row>
         <SocialMedia>

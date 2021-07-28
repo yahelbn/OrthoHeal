@@ -116,14 +116,16 @@ export const Row = styled.div`
   display: flex;
   justify-content: baseline;
   align-items: center;
+  direction: ${({ rtl }) => (rtl ? "rtl" : "ltr")};
 `;
 
 export const LabelFooter = styled.label`
   color: white;
   margin-left: 10px;
   margin-right: 10px;
+  direction: ${({ rtl }) => (rtl ? "rtl" : "ltr")};
 
   @media screen and (max-width: 450px) {
-    font-size: 14px;
+    font-size: 13px;
   }
 `;
