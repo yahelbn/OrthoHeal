@@ -133,9 +133,9 @@ const Navbar = ({ toggle, toggleLanguage, locale, content }) => {
                 style={{ width: "120px", height: "100px", marginTop: "20px" }}
               />{" "}
             </NavLogo>
-            <MobileIcon onClick={toggle}>
+            {/* <MobileIcon onClick={toggle}>
               <FaBars color={"#2c3c8c"} />
-            </MobileIcon>
+            </MobileIcon> */}
             <NavMenu rtl={Boolean(rtl) ? true : false}>
               {/* {renderNavBarLinks} */}
 

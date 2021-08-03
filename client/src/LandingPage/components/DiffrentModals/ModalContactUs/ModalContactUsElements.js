@@ -19,7 +19,7 @@ export const FormButton = styled.button`
 
 export const Paragraph = styled.p`
   direction: ${({ rtl }) => (rtl ? "rtl" : "ltr")};
-  font-size: 0.8rem;
+  font-size: 1rem;
 
   @media screen and (max-width: 550px) {
     font-size: 0.7rem;
@@ -47,8 +47,8 @@ export const Column = styled.div`
 export const ImgWrap = styled.div`
   max-width: 280px;
   height: 60%;
-  margin-bottom: 35px;
   margin-left: 15px;
+  margin-top: 50px;
 `;
 
 export const Img = styled.img`
@@ -59,6 +59,8 @@ export const Img = styled.img`
 
 export const HeaderService = styled.h2`
   padding-bottom: 15px;
+  direction: ${({ rtl }) => (rtl ? "rtl" : "ltr")};
+
   @media screen and (max-width: 550px) {
     font-size: 1rem;
   }

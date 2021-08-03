@@ -28,6 +28,11 @@ export const DataEnglish = {
     text: "Leave details and we will be happy to contact you",
     text2:
       "Thank you for your interest, <br> Please leave details and contact us soon:",
+    modal: {
+      rtl: false,
+      header: "Your details have been successfully sent!",
+      p: " We will contact you soon .",
+    },
   },
 
   navBar: {

@@ -3,6 +3,8 @@ import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
 
 export const Button = styled(LinkS)`
+  z-index: 5;
+
   border-radius: 50px;
   background: ${({ primary }) => (primary ? "#8cc049" : "#7f89bd")};
   white-space: nowrap;

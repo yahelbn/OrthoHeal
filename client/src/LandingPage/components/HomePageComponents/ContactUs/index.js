@@ -54,6 +54,7 @@ const ContactUs = ({ content, locale }) => {
     rtl,
     routerlink,
     circleimg,
+    modal,
   } = content;
 
   const linkButton = createButton();
@@ -105,21 +106,16 @@ const ContactUs = ({ content, locale }) => {
   }
 
   const sendMail = async () => {
-    try {
-      await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/mails/send`, {
+    await axios
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/mails/send`, {
         sender: { telephone: telephone, email: email, fullName: fullName },
+      })
+      .then(toggle())
+      .catch((error) => {
+        setIsError(true);
+        setMessage("Your details have not been sent");
+        setLoader(false);
       });
-      setIsError(false);
-      setLoader(false);
-      setMessage("Your details have been sent");
-      //  setTimeout(() => {}, 2000);
-      toggle();
-      console.log("hereeeee");
-    } catch (e) {
-      setIsError(true);
-      setMessage("Your details have not been sent");
-      setLoader(false);
-    }
   };
 
   const ConvertDescription = ReactHtmlParser(description);
@@ -128,7 +124,7 @@ const ContactUs = ({ content, locale }) => {
     <>
       <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
-          {/* <Modal
+          <Modal
             isShowing={isShowing}
             hide={toggle}
             modalcomp={
@@ -138,7 +134,7 @@ const ContactUs = ({ content, locale }) => {
                 //locale={props.locale}
               />
             }
-          /> */}
+          />
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper rtl={Boolean(rtl) ? true : false}>
@@ -173,6 +169,7 @@ const ContactUs = ({ content, locale }) => {
                     />
                     <FormButton
                       onClick={() => {
+                        setContentOfModal(modal);
                         sendMail();
                       }}
                       type="submit"

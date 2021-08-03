@@ -28,6 +28,11 @@ export const DataHebrew = {
 
     text: "השאירו פרטים ונשמח ליצור עמכם קשר",
     text2: "תודה על התעניינותך ,<br>  אנא השאר פרטים ואצור קשר בהקדם:",
+    modal: {
+      rtl: true,
+      header: "פרטיך נשלחו בהצלחה!",
+      p: " ניצור קשר בהקדם .",
+    },
   },
 
   navBar: {
@@ -80,6 +85,11 @@ export const DataHebrew = {
     email: "yahelbn3123@gmail.com",
 
     text2: "תודה על התעניינותך ,<br>  אנא השאר פרטים ואצור קשר בהקדם:",
+    modal: {
+      rtl: true,
+
+      p: "פרטיך נשלחו בהצלחה!<br> ניצור קשר בהקדם .",
+    },
   },
   footer: {
     rtl: true,

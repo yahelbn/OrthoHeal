@@ -53,7 +53,7 @@ const HeroSection = ({ content, locale }) => {
             {" "}
             <VideoBg
               controls
-              autoPlay
+              // autoPlay
               loop
               src={
                 "https://video.wixstatic.com/video/c60bce_eddcd9d43da0416da245ffaf6245c182/720p/mp4/file.mp4"
